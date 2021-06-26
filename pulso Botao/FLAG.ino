@@ -32,7 +32,6 @@ void loop()
   	digitalWrite(writePin, HIGH);
   } else {
     Serial.println("[+] Led desligado");
-  	digitalWrite(writePin, LOW);
-    
+  	digitalWrite(writePin, LOW);   
   }
 }
