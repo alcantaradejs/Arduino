@@ -3,7 +3,7 @@
 // o objetivo deste codigo é inverter o estado do led quando receber um pulso do botão
 
 const int writePin = 13;
-const int readPin = 5;
+const int readPin = 7;
 
 bool ledState = false;
 bool buttonState;

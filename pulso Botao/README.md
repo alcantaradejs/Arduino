@@ -10,3 +10,6 @@ As atividades tem como objetivo programar a interação entre botões e LEDs usa
     [ solução 2 ] - FLAG.ino
     [ solução 3 ] - ultimoValor.ino
     [ solução 4 ] - switch.ino
+
+# links
+    https://www.tinkercad.com/things/79mKpgLbIIz
