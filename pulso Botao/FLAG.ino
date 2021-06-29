@@ -20,18 +20,16 @@ void setup()
 void loop()
 {
   buttonState = digitalRead(readPin);
+  
   if (buttonState == 1 && functionExec == false){
     functionExec = true;
     ledState = !ledState;// inverter o ledState
+
   } else if (buttonState == 0 && functionExec == true ) {
     functionExec = false;
   }
-  
-  if (ledState == 1){
-    Serial.println("[+] Led ligado");
-  	digitalWrite(writePin, HIGH);
-  } else {
-    Serial.println("[+] Led desligado");
-  	digitalWrite(writePin, LOW);   
-  }
+
+  digitalWrite(writePin, ledState);
 }
+
+// 4

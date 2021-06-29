@@ -23,11 +23,11 @@ void loop()
     ledState = !ledState;// inverter o ledState
   }
   
-  if (ledState == 1){
-    Serial.println("[+] Led ligado");
-  	digitalWrite(writePin, HIGH);
-  } else {
-    Serial.println("[+] Led desligado");
-  	digitalWrite(writePin, LOW); 
-  }
+  digitalWrite(writePin, ledState);
 }
+
+//2
+
+//ladState = 0
+//buttonState = 1
+//functionExec = 0
