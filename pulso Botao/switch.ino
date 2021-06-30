@@ -9,7 +9,7 @@ bool previousButtonState = 0;
 
 void setup() {
   pinMode(writePin, OUTPUT);
-  pinMode(=readPin, INPUT);
+  pinMode(readPin, INPUT);
 }
 
 void loop() {
