@@ -23,23 +23,7 @@ void setup() {
     pinMode(buttonRight, INPUT);
 }
 
-void loop() {
-
-    buttonRightState = digitalRead(buttonRight);
-    buttonLeftState = digitalRead(buttonLeft);
-
-    if (buttonRightState && !previousButtonRightState && currentLED <= numberLEDs) {
-        currentLED++ ;
-    } else if (currentLED > numberLEDs ) {
-        currentLED = 1;
-    }
-
-    if (buttonLeftState && !previousButtonLeftState && currentLED > 0) {
-        currentLED-- ;
-    } else if (currentLED <= 0 ) {
-        currentLED = numberLEDs;
-    }
-    
+void ledsState(int currentLED) {
     switch (currentLED) {
     case 0:
         digitalWrite(LEDLeft , LOW);
@@ -65,6 +49,27 @@ void loop() {
         digitalWrite(LEDRight , HIGH);
         break;
     }
+
+}
+
+void loop() {
+
+    buttonRightState = digitalRead(buttonRight);
+    buttonLeftState = digitalRead(buttonLeft);
+
+    if (buttonRightState && !previousButtonRightState && currentLED <= numberLEDs) {
+        currentLED++ ;
+    } else if (currentLED > numberLEDs ) {
+        currentLED = 1;
+    }
+
+    if (buttonLeftState && !previousButtonLeftState && currentLED > 0) {
+        currentLED-- ;
+    } else if (currentLED <= 0 ) {
+        currentLED = numberLEDs;
+    }
+
+    ledsState(currentLED);
     //digitalWrite(LED, ledState);
     
     previousButtonRightState = buttonRightState;
