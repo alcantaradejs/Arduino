@@ -8,6 +8,15 @@ const int readPin = 7;
 bool ledState = false;
 bool buttonState;
 bool previousButtonState;
+int buttonCliks = 0;
+
+int buttonCounter ( int buttonCliks ) {
+    buttonCliks += 1;
+    Serial.print("vc clicou ");
+    Serial.print(buttonCliks);
+    Serial.println(" vezes ");
+    return buttonCliks;
+}
 
 void setup() {
   Serial.begin(9600);
@@ -17,10 +26,12 @@ void setup() {
 
 void loop() {
   buttonState = digitalRead(readPin);
-  if (buttonState == 1 && previousButtonState == 0){
-    ledState = !ledState;// inverter o ledState
-  }
   
+  if (buttonState == 1 && previousButtonState == 0) {
+    buttonCliks = buttonCounter(buttonCliks);
+    ledState = !ledState;
+  }
+
   previousButtonState = buttonState;
   digitalWrite(writePin, ledState);
 }
