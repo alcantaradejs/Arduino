@@ -30,6 +30,7 @@
 
 ## 3 - Considere agora o Arduino com 2 botões e 3 LEDS:
 Faça um programa para acender somente 1 LED de cada vez, onde um pulso no botão 1 desloca o LED aceso para a esquerda, e o botão 2 desloca para a direita.
+
 ![img2](images/img2.png)
 ### codigo
     buttonRightState = digitalRead(buttonRight);
