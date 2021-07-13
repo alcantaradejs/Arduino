@@ -5,11 +5,12 @@ const int button = 7;
 
 bool ledState = false;
 bool buttonState = false;
+bool previousButtonState = false;
 
 void setup() {
-    Serial.begin(9600)
+    Serial.begin(9600);
     pinMode(LED, OUTPUT);
-    pinMOde(button, INPUT);
+    pinMode(button, INPUT);
 }
 
 void loop() {
