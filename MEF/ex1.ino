@@ -1,20 +1,20 @@
-// coded by Isaque Alcantara
+// coded by @B4tataFitas
 
-const int writePin = 13;
-const int readPin = 7;
+const int LED = 13;
+const int button = 7;
 
 bool ledState = false;
-int buttonState;
-bool previousButtonState = 0;
+bool buttonState = false;
 
 void setup() {
-  pinMode(writePin, OUTPUT);
-  pinMode(readPin, INPUT);
+    Serial.begin(9600)
+    pinMode(LED, OUTPUT);
+    pinMOde(button, INPUT);
 }
 
 void loop() {
 
-    buttonState = digitalRead(readPin);
+    buttonState = digitalRead(button);
 
     switch (buttonState) {
     case 1:
@@ -28,6 +28,6 @@ void loop() {
     }
 
     previousButtonState = buttonState;
-    digitalWrite(writePin, ledState);
+    digitalWrite(LED, ledState);
 
 }
