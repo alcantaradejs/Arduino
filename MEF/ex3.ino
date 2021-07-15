@@ -3,7 +3,6 @@
 const int LEDLeft = 13;
 const int LEDCenter = 12;
 const int LEDRight = 11;
-const int numberLEDs = 3;
 
 const int buttonLeft = 7;
 const int buttonRight = 8;
@@ -57,16 +56,12 @@ void loop() {
     buttonRightState = digitalRead(buttonRight);
     buttonLeftState = digitalRead(buttonLeft);
 
-    if (buttonRightState && !previousButtonRightState && currentLED <= numberLEDs) {
+    if (buttonRightState && !previousButtonRightState && currentLED < 3) {
         currentLED++ ;
-    } else if (currentLED > numberLEDs ) {
-        currentLED = 1;
     }
 
-    if (buttonLeftState && !previousButtonLeftState && currentLED > 0) {
+    if (buttonLeftState && !previousButtonLeftState && currentLED > 1) {
         currentLED-- ;
-    } else if (currentLED <= 0 ) {
-        currentLED = numberLEDs;
     }
 
     ledsState(currentLED);
