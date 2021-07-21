@@ -38,7 +38,7 @@ void loop() {
     controlePortao(0, gateState[0]);
     controlePortao(1, gateState[1]);
 
-    delay(1500);
+    delay(1500); // apenas para simulacao
 
 }
 
@@ -47,11 +47,12 @@ int sensorListener(int gate, int gateState) {
     int closedGate = digitalRead(SF[gate]);
     int openGate = digitalRead(SA[gate]);
 
-    if ( buttonState && !previousButtonState[gate] && closedGate) {
-        gateState = 1;
-        previousGateState[gate] = gateState;
-    } else if (buttonState && !previousButtonState[gate] && openGate) {
-        gateState = 2;
+    if ( buttonState && !previousButtonState[gate]) {
+        if (closedGate) {
+            gateState = 1;
+        } else if (openGate) {
+            gateState = 2;
+        }
         previousGateState[gate] = gateState;
     } else if (buttonState && !previousButtonState[gate] && !closedGate && !openGate) {
         if (gateState != 0) {
