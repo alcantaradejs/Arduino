@@ -58,7 +58,7 @@ int sensorListener(int gate, int gateState) {
             gateState = 0;
         } else {
             gateState = previousGateState[gate] == 1? 2 : 1;
-            previousButtonState[gate] = gateState ;
+            previousGateState[gate] = gateState ;
         }
     } else if ((openGate || closedGate) && !buttonState) {
         gateState = 0;
